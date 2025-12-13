@@ -42,7 +42,7 @@ const CreateAccount = () => {
                 }else if(err=='please change the password'){
                     document.getElementById("passwordERR").textContent='please change the password'
                 }else{
-                    alert(err)
+                    alert("couldnt update the registered data")
                 }
             })
         }
