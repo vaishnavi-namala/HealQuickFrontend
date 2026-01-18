@@ -3,7 +3,7 @@ import footer from './Footer.module.css'
 import { Link } from 'react-router'
 import {GetApi} from '../CallApi'
 const Footer = () => {
-     const treatment=GetApi("https://healquickbackend.onrender.com/treat")
+     const treatment=GetApi("https://healquickbackend-1.onrender.com/treat")
   return (
    <>
     <div className={`container-fluid ${footer.foot}`}>
