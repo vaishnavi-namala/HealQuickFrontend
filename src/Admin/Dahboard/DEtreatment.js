@@ -5,7 +5,7 @@ import {DeleteApi, GetApi} from '../../CallApi'
 
 
 const DEtreatment = () => {
-  const treats=GetApi("https://healquickbackend.onrender.com/treat")
+  const treats=GetApi("https://healquickbackend-1.onrender.com/treat")
   const [treat,settreat]=useState({treatName:'',image:'',description:''})
   const changedata=(e)=>{
     if(e.target.name!=="image"){
@@ -15,7 +15,7 @@ const DEtreatment = () => {
     }
   }
   const gettrt=(tid)=>{
-    axios.get(`https://healquickbackend.onrender.com/treat/${tid}`)
+    axios.get(`https://healquickbackend-1.onrender.com/treat/${tid}`)
     .then(res=>{settreat(res.data)})
     .catch(err=>{alert(err)})
   }
@@ -25,7 +25,7 @@ const DEtreatment = () => {
     formdata.append("treatName",treatName)
     formdata.append("image",image)
     formdata.append("description",description)
-    axios.put(`https://healquickbackend.onrender.com/treat/${treat._id}`,formdata,{headers:{"Content-Type": "multipart/form-data"}})
+    axios.put(`https://healquickbackend-1.onrender.com/treat/${treat._id}`,formdata,{headers:{"Content-Type": "multipart/form-data"}})
     .then(res=>{console.log(res.data)})
     .catch(err=>{alert(err)})
   }
@@ -36,14 +36,14 @@ const DEtreatment = () => {
       {treats.map(treat=>{
         return(
          <div className={Dashborad.treatcard}>
-          <img src={`https://healquickbackend.onrender.com${treat.image}`} alt=''  className={Dashborad.treatImg}/>
+          <img src={`https://healquickbackend-1.onrender.com${treat.image}`} alt=''  className={Dashborad.treatImg}/>
           <div>
           <h4>{treat.treatName}</h4>
           <p>{treat.description}</p>
           </div>
           <div className={Dashborad.butt}>
             <button className={Dashborad.edit} onClick={()=>{gettrt(treat._id)}} data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="bi bi-pencil-fill"></i></button>
-            <button onClick={()=>{DeleteApi(`https://healquickbackend.onrender.com/blog/${treat._id}`)}} className={`text-danger ${Dashborad.edit}`}><i className="bi bi-trash3"></i></button>
+            <button onClick={()=>{DeleteApi(`https://healquickbackend-1.onrender.com/blog/${treat._id}`)}} className={`text-danger ${Dashborad.edit}`}><i className="bi bi-trash3"></i></button>
           </div>
          </div>
         )
