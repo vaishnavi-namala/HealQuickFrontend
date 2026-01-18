@@ -18,7 +18,7 @@ const AddOffer = () => {
   const Submit=(e)=>{
     e.preventDefault()
    if (!err()){
-    axios.post('https://healquickbackend.onrender.com/offer',offer)
+    axios.post('https://healquickbackend-1.onrender.com/offer',offer)
     .then(res=>{
       alert(res.data)
       setOffer({...offer,offerDescription:'',OfferTitle:''})
