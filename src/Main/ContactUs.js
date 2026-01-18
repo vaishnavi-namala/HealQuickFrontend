@@ -21,7 +21,7 @@ const ContactUs = () => {
   const SubmitContact=(e)=>{
     e.preventDefault()
     if(!err()){
-      axios.post("https://healquickbackend.onrender.com/Contact",contact)
+      axios.post("https://healquickbackend-1.onrender.com/Contact",contact)
       .then(res=>{
         alert(res.data)
       })
