@@ -5,18 +5,18 @@ import axios from 'axios'
 import {DeleteApi, GetApi} from '../../CallApi'
 
 const DEOffers = () => {
-  const offers=GetApi("https://healquickbackend.onrender.com/offer")
+  const offers=GetApi("https://healquickbackend-1.onrender.com/offer")
   const [offer,setOffer]=useState({offerDescription:'',OfferTitle:''})
   const changeoffer=(e)=>{
     setOffer({...offer,[e.target.name]:e.target.value})
   }
   const getoff=(oid)=>{
-    axios.get(`https://healquickbackend.onrender.com/offer/${oid}`)
+    axios.get(`https://healquickbackend-1.onrender.com/offer/${oid}`)
     .then(res=>{setOffer(res.data)})
     .catch(err=>{alert(err)})
   } 
   const editOffer=()=>{
-    axios.put(`https://healquickbackend.onrender.com/offer/${offer._id}`,offer)
+    axios.put(`https://healquickbackend-1.onrender.com/${offer._id}`,offer)
     .then(res=>{console.log(res.data)})
     .catch(err=>{alert(err)})
   }
@@ -39,7 +39,7 @@ const DEOffers = () => {
                 <td>{off.OfferTitle}</td>
                 
                 <td>
-                  <button onClick={()=>{DeleteApi(`https://healquickbackend.onrender.com/offer/${off._id}`)}}>delete</button>
+                  <button onClick={()=>{DeleteApi(`https://healquickbackend-1.onrender.com/offer/${off._id}`)}}>delete</button>
                   <button onClick={()=>{getoff(off._id)}} data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                 </td>
               </tr>)
