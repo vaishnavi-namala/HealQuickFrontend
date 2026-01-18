@@ -12,10 +12,10 @@ import { validateForm } from '../ValidateForm'
 
 
 const Home = () => {
-    const Hospitals=GetApi("https://healquickbackend.onrender.com/associateHospital")
-    const blogs=GetApi("https://healquickbackend.onrender.com/blog")
+    const Hospitals=GetApi("https://healquickbackend-1.onrender.com/associateHospital")
+    const blogs=GetApi("https://healquickbackend-1.onrender.com/blog")
     const blogstodisplay=blogs.slice(0,4)
-    const offers=GetApi("https://healquickbackend.onrender.com/offer")
+    const offers=GetApi("https://healquickbackend-1.onrender.com/offer")
     const [quick,setQuick]=useState({patient_Name:'',patient_mobileNo:'',patient_mailId:''})
     const changedata=(e)=>{
       setQuick({...quick,[e.target.name]:e.target.value})
@@ -30,7 +30,7 @@ const Home = () => {
     const submitHandler=(e)=>{
       e.preventDefault()
       if(!err()){
-      axios.post("https://healquickbackend.onrender.com/quick",quick)
+      axios.post("https://healquickbackend-1.onrender.com/quick",quick)
       .then(res=>{
         alert(res.data)
       })
@@ -119,7 +119,7 @@ const Home = () => {
                         return (
                             <div key={index} className={`col-lg-3 col-md-4 col-6 mb-3 `}>
                               <div className={dashboard.companyCard}>
-                                <img src={`https://healquickbackend.onrender.com/${i}`} className={`w-100 h-100  `} />
+                                <img src={`https://healquickbackend-1.onrender.com/${i}`} className={`w-100 h-100  `} />
                                 </div>
                             </div>
                             )     
@@ -133,7 +133,7 @@ const Home = () => {
         <div className={`${main.blogContainer}`}>
       {blogstodisplay.map((blog) => (
         <div className={`${main.blogCard}`} key={blog._id}>
-          <img src={`https://healquickbackend.onrender.com/${blog.blog_image}`} alt={blog.blog_title} className={`${main.blogImg}`} />
+          <img src={`https://healquickbackend-1.onrender.com/${blog.blog_image}`} alt={blog.blog_title} className={`${main.blogImg}`} />
 
           <div className={`${main.blogContent}`}>
             <h3>{blog.blog_title}</h3>
