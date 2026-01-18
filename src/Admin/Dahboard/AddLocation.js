@@ -5,7 +5,7 @@ import {GetApi} from '../../CallApi'
 import { validateForm } from '../../ValidateForm'
 
 const AddLocation = () => {
-const treatment=GetApi("https://healquickbackend.onrender.com/treat")
+const treatment=GetApi("https://healquickbackend-1.onrender.com/treat")
 const [location,setlocation]=useState({treatName:'',location:''})
 const changelocation=(e)=>{
   setlocation({...location,[e.target.name]:e.target.value})
@@ -19,7 +19,7 @@ const err=()=>{
 const submithandler=(e)=>{
   e.preventDefault()
   if(!err()){
-  axios.post("https://healquickbackend.onrender.com/location",location)
+  axios.post("https://healquickbackend-1.onrender.com/location",location)
   .then(res=>{alert(res.data);setlocation({treatName:'',location:''})})
   .catch(err=>{alert(err)})
   }
