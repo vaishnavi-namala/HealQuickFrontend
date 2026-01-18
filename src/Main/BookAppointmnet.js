@@ -8,7 +8,7 @@ import { validateForm } from '../ValidateForm'
 
 const BookAppointmnet = () => {
   const {treatName1,location1,doctorName1}=useParams()
-  const allLocation=GetApi("https://healquickbackend.onrender.com/location")
+  const allLocation=GetApi("https://healquickbackend-1.onrender.com/location")
   const [treatName,setTreatName]=useState(treatName1 || '')
   const [location,setLocation]=useState(location1||'')
   const [doctorName,setdoctorName]=useState(doctorName1||'')
@@ -34,7 +34,7 @@ const BookAppointmnet = () => {
   const postPatient=(e)=>{
     e.preventDefault(); 
     if(!err()){
-     axios.post("https://healquickbackend.onrender.com/book",patient)
+     axios.post("https://healquickbackend-1.onrender.com/book",patient)
           .then(res=>{
             alert("Appointment has been Booked")
           })
