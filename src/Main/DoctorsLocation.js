@@ -5,7 +5,7 @@ import Book from './Book.module.css'
 
 const DoctorsLocation = () => {
     const {treatName,location}=useParams()
-    const Doctors=GetApi("https://healquickbackend.onrender.com/doctor")
+    const Doctors=GetApi("https://healquickbackend-1.onrender.com/doctor")
     const doctorLocation=Doctors.filter((doctor)=>{
         return(doctor.location==location && doctor.treatName==treatName)
     })
