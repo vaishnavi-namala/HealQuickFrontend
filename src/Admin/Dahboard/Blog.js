@@ -28,7 +28,7 @@ const Blog = () => {
     formdata.append("blog_image",blog_image)
     formdata.append("blog_title",blog_title)
     formdata.append("blog_description",blog_description)
-    axios.post('https://healquickbackend.onrender.com/blog',formdata,{headers:{"Content-Type": "multipart/form-data"}})
+    axios.post('https://healquickbackend-1.onrender.com/blog',formdata,{headers:{"Content-Type": "multipart/form-data"}})
     .then(res=>{
       if(res.data==="couldnt post data") throw "couldnt post data"
       alert(res.data);
