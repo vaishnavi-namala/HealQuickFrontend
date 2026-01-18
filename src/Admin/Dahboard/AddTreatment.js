@@ -29,7 +29,7 @@ const AddTreatment = () => {
     formdata.append("treatName",treatName)
     formdata.append("image",image)
     formdata.append("description",description)
-    axios.post('https://healquickbackend.onrender.com/treat',formdata,{headers:{"Content-Type": "multipart/form-data"}})
+    axios.post('https://healquickbackend-1.onrender.com/treat',formdata,{headers:{"Content-Type": "multipart/form-data"}})
     .then(res=>{
       if(res.data==="couldnt post data") throw "couldnt post data"
       alert(res.data);
