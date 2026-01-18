@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router'
 
 const TreatmentLocation = () => {
   const {treatName}=useParams()
-  const locations=GetApi("https://healquickbackend.onrender.com/location")
+  const locations=GetApi("https://healquickbackend-1.onrender.com/location")
   const TreatLocation=locations.filter(location=>{
     return(location.treatName===treatName)
   })
