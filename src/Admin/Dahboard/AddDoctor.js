@@ -6,7 +6,7 @@ import { validateForm } from '../../ValidateForm'
 const AddDoctor = () => {
   const [treatName,setTreatName]=useState('')
   const [location,setLocation]=useState('')
-  const Treatment_location=GetApi("https://healquickbackend.onrender.com/location")
+  const Treatment_location=GetApi("https://healquickbackend-1.onrender.com/location")
   const treatments=Treatment_location.map(doc=>{return doc.treatName})
   const filteredLocations = treatName? Treatment_location.find((t) => t.treatName === treatName)?.locations:[]
   const [doctor,setdoctor]=useState({doctorName:'',d_qual:'',d_num:'',d_email:'',d_experince:'',d_skills:'',Description:''})
@@ -33,7 +33,7 @@ const AddDoctor = () => {
     e.preventDefault()
     if(!err()){
       console.log(doctor)
-    axios.post("https://healquickbackend.onrender.com/doctor",doctor)
+    axios.post("https://healquickbackend-1.onrender.com/doctor",doctor)
     .then(res=>{alert(res.data);
       setdoctor({...doctor,doctorName:'',d_qual:'',d_num:'',d_email:'',d_experince:'',d_skills:'',Description:''})
     setTreatName('')
