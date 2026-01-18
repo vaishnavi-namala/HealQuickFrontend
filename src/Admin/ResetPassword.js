@@ -47,7 +47,7 @@ const ResetPassword = () => {
             }else{
             conpasserr.textContent=''
             if (password==conpassword){
-                axios.put(`https://healquickbackend.onrender.com/register/${email}`,{password:password})
+                axios.put(`https://healquickbackend-1.onrender.com/register/${email}`,{password:password})
                 .then(res=>{
                     alert(res.data)
                     setpass({...pass,password:'',conpassword:''})
