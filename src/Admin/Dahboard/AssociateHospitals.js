@@ -20,7 +20,7 @@ const AssociateHospitals = () => {
     }else{
     const formdata=new FormData()
     imgfile.forEach(img=>{formdata.append("image",img)})
-    axios.post("https://healquickbackend.onrender.com/associateHospital",formdata,{headers:{"Content-Type":"multipart/form-data"}}) 
+    axios.post("https://healquickbackend-1.onrender.com/associateHospital",formdata,{headers:{"Content-Type":"multipart/form-data"}}) 
     .then(res=>{
       alert(res.data)
       fileref.current.value=[]
