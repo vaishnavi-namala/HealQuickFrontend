@@ -7,7 +7,7 @@ import { DeleteApi,GetApi } from '../../CallApi'
 
 
 const DEblogs = () => {
-    const Blogs=GetApi("https://healquickbackend.onrender.com/blog")
+    const Blogs=GetApi("https://healquickbackend-1.onrender.com/blog")
     const [blog,setBlog]=useState({blog_image:'',blog_title:'',blog_description:''})
       const ChangeBlog=(e)=>{
         if(e.target.name==='blog_image'){
@@ -18,7 +18,7 @@ const DEblogs = () => {
       }
       const {blog_image,blog_title,blog_description}=blog
       const getblog=(b_id)=>{
-        axios.get(`https://healquickbackend.onrender.com/blog/${b_id}`)
+        axios.get(`https://healquickbackend-1.onrender.com/blog/${b_id}`)
         .then(res=>{ setBlog(res.data)})
         .catch(err=>{alert(err)})
       }
@@ -27,7 +27,7 @@ const DEblogs = () => {
         formdata.append("blog_image",blog_image)
         formdata.append("blog_title",blog_title)
         formdata.append("blog_description",blog_description)
-        axios.put(`https://healquickbackend.onrender.com/blog/${blog._id}`,formdata,{headers:{"Content-Type": "multipart/form-data"}})
+        axios.put(`https://healquickbackend-1.onrender.com/blog/${blog._id}`,formdata,{headers:{"Content-Type": "multipart/form-data"}})
         .then(res=>{
           alert(res.data);         
         })
@@ -39,13 +39,13 @@ const DEblogs = () => {
             {Blogs.map((blog,index)=>{return (
                 <div className={ ` shadow my-3 ${dashboard.BlogMain}`}>
             <div key={index} className='row '>
-                <div className='col-lg-4'><img src={`https://healquickbackend.onrender.com/${blog.blog_image}`} alt='Blog_image' className={Main.blogImg} /></div>
+                <div className='col-lg-4'><img src={`https://healquickbackend-1.onrender.com/${blog.blog_image}`} alt='Blog_image' className={Main.blogImg} /></div>
                 <div className='col-lg-8'>
                     <h3 className='w-75'>{blog.blog_title}</h3>
                     <p className='text-break'>{blog.blog_description}</p>
                     <div className={dashboard.butt}>
                         <button onClick={()=>{getblog(blog._id)}} className={`${dashboard.edit}`} data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="bi bi-pencil-fill"></i></button>
-                        <button onClick={()=>{DeleteApi(`https://healquickbackend.onrender.com/blog/${blog._id}`)}} className={`text-danger ${dashboard.edit}`}><i className="bi bi-trash3"></i></button>
+                        <button onClick={()=>{DeleteApi(`https://healquickbackend-1.onrender.com/blog/${blog._id}`)}} className={`text-danger ${dashboard.edit}`}><i className="bi bi-trash3"></i></button>
                     </div>
 
                 </div>
