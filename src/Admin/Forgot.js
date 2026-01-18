@@ -11,7 +11,7 @@ const Forgot = () =>{
     e.preventDefault()
     if(validate()){
       
-      axios.post("https://healquickbackend.onrender.com/reset",{email:email,mobile:mobile})
+      axios.post("https://healquickbackend-1.onrender.com/reset",{email:email,mobile:mobile})
       .then((res)=>{
         if(res.data=="does not exist") {throw "does not exist"}
         else{navigate(`/reset/${email}`)}
@@ -23,7 +23,7 @@ const Forgot = () =>{
   }
     const submithandler=(e)=>{
     e.preventDefault()
-    axios.post('https://healquickbackend.onrender.com/forgot',{email:email,mobile:mobile})
+    axios.post('https://healquickbackend-1.onrender.com/forgot',{email:email,mobile:mobile})
     .then(res=>{
       if(res.data=="does not exist") throw "does not exist"
       alert(res.data)
