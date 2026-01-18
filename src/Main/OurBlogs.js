@@ -8,7 +8,7 @@ import { Link } from 'react-router'
 
 
 const OurBlogs = () => {  
-  const Blogs=GetApi("https://healquickbackend.onrender.com/blog")
+  const Blogs=GetApi("https://healquickbackend-1.onrender.com/blog")
   return (
     <div className={Book.head}>
     <div className={`${Book.BlogBanner}`}>
@@ -30,7 +30,7 @@ const OurBlogs = () => {
           {Blogs.map((blog,index)=>{return (
                     <tr className={`${Book.BlogMain}`}>
                 <div key={index} className='row '>
-                    <div className='col-lg-4 p-0'><img src={`https://healquickbackend.onrender.com/${blog.blog_image}`} alt='Blog_image' className={Book.blogImg} /></div>
+                    <div className='col-lg-4 p-0'><img src={`https://healquickbackend-1.onrender.com/${blog.blog_image}`} alt='Blog_image' className={Book.blogImg} /></div>
                     <div className={`col-lg-8 ${Book.BlogContent}`}>
                         <h1>{blog.blog_title}</h1>
                         <p className='text-break'>{blog.blog_description}</p>
