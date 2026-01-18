@@ -5,7 +5,7 @@ import axios from 'axios'
 import {DeleteApi, GetApi} from '../../CallApi'
 
 const DElocation = () => {
-  const Treatment_location=GetApi("https://healquickbackend.onrender.com/location")
+  const Treatment_location=GetApi("https://healquickbackend-1.onrender.com/location")
   return (   
   <div className={`container ${Dashborad.treat}`}>
     {Treatment_location.map(doc=>{
@@ -17,7 +17,7 @@ const DElocation = () => {
             return(<div>
               
                 <p>{location}</p>
-                <button onClick={()=>{DeleteApi(`https://healquickbackend.onrender.com/location/${doc._id}/${location}`)}}><i className="bi bi-trash"></i></button>
+                <button onClick={()=>{DeleteApi(`https://healquickbackend-1.onrender.com/location/${doc._id}/${location}`)}}><i className="bi bi-trash"></i></button>
              </div> 
             )
           })} 
