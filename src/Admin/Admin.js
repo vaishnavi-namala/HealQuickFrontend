@@ -26,7 +26,7 @@ const Admin = () => {
     const submithandler=(e)=>{
         e.preventDefault()
         if(!err()){
-        axios.post("https://healquickbackend.onrender.com/login",data)
+        axios.post("https://healquickbackend-1.onrender.com/login",data)
         .then((res)=>{
             if (!res.data.token) throw res.data
             settoken(res.data.token)
