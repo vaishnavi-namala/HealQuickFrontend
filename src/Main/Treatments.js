@@ -5,8 +5,8 @@ import { Link } from 'react-router'
 import Book from './Book.module.css'
 
 const Treatments = () => {
-  const Treatment=GetApi("https://healquickbackend.onrender.com/treat")
-  const offers=GetApi("https://healquickbackend.onrender.com/offer")
+  const Treatment=GetApi("https://healquickbackend-1.onrender.com/treat")
+  const offers=GetApi("https://healquickbackend-1.onrender.com/offer")
   return (
 
     <div className={Book.head}>
@@ -27,7 +27,7 @@ const Treatments = () => {
           {Treatment.map((treat,index)=>{
             return(
               <Link to={`/location/${treat.treatName}` } className={`nav-link ${Treat.blogC}`}>
-                <img src={`https://healquickbackend.onrender.com${treat.image}`} alt="image" className={Treat.blogImg}/>
+                <img src={`https://healquickbackend-1.onrender.com${treat.image}`} alt="image" className={Treat.blogImg}/>
                 <div className={`${Treat.blogContent}`}>
                   <h3>{treat.treatName}</h3>
                   <p>{treat.description}</p>
