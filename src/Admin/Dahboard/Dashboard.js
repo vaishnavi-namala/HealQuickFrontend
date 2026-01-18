@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [token]=useContext(RoutProtect)
     const navigate=useNavigate()
     useEffect(()=>{
-      axios.get('https://healquickbackend.onrender.com/admin',{headers:{"x-token":token}})
+      axios.get('https://healquickbackend-1.onrender.com/admin',{headers:{"x-token":token}})
       .then(res=>{
         if(res.data!=='admin'){
           navigate('/admin')     
