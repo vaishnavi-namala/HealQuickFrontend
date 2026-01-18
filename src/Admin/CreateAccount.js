@@ -24,7 +24,7 @@ const CreateAccount = () => {
     const submithandler=(e)=>{
         e.preventDefault()
         if(!err()){
-            axios.post("https://healquickbackend.onrender.com/register",{fname:fname,lname:lname,password:password,email:email,mobile:mobile,description:description})
+            axios.post("https://healquickbackend-1.onrender.com/register",{fname:fname,lname:lname,password:password,email:email,mobile:mobile,description:description})
             .then((res)=>{
                 if(res.data=='Already account exists through this mailId'||res.data=='Already registered through this mobile number'||res.data=='please change the password'){
                     throw res.data}
