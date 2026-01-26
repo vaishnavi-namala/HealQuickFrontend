@@ -50,7 +50,7 @@ const Home = () => {
         </ul>
         <div className={`container-fluid ${main.image}`}>
           <div className='row h-100 '>
-            <div className={`col-lg-4 col-md-7 ms-lg-2 ps-lg-3 ${main.fig}`}>
+            <div className={`col-lg-4 col-md-7 ps-lg-3 ${main.fig}`}>
               <div>
               <figure>
                 <img width="100" height="100" src={doctor} alt="doctor-female-skin-type-5"/>
